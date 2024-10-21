@@ -1,0 +1,13 @@
+Services Breakdown
+
+Accounting: Handles billing, payments, invoices, etc.
+AI Integrator: Manages AI-powered case predictions, document analysis, etc.
+Analytics: Provides data insights and reports.
+Authentication/Authorization: Manages user authentication and access control.
+Campaign: Manages marketing campaigns and client notifications.
+Document Manager: Handles the storage, retrieval, and version control of legal documents.
+Firm Manager: Manages law firm data, including users, cases, and clients.
+Log: Centralized logging service.
+Notification: Handles notifications (email, SMS, push notifications).
+OCR: Optical Character Recognition for scanning and processing legal documents.
+Task Manager: Handles automated reminders and task management for users.

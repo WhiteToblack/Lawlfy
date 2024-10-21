@@ -1,0 +1,12 @@
+install docker -> 
+docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+node rabbitmq\create-queues.js
+
+
+pm2 - https://medium.com/appcent/pm2-i%CC%87le-node-js-proses-y%C3%B6netimi-linux-sunucu-fc405016045d
+
+pm2 link pod5v35fxxzon3d 0hi7i8iqs3dgc11
+PM2+ activated | Instance Name: LAPTOP-O79T7AV6-2bda | Dash: https://app.pm2.io/#/r/0hi7i8iqs3dgc11
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+npx pm2 start ecosystem.config.js
