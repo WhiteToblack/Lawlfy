@@ -1,0 +1,7 @@
+#   UI katmanı yazılacak
+#   UI 'dan gelen request'ler middleWare 'da JWT BaseRequest oluşturulacak.
+#   middleWare request'i saga-hero(orchestrator) 'a gönderecek
+#   saga-hero metot adına göre rabbitMq 'a publish edecek.
+#   RabbitMq Consume sonrası CRUD işlemleri gerçekleştirecek
+
+#   saga-hero içerisine EDA Pattern eklenebilir
