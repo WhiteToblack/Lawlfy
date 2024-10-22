@@ -1,15 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork.Entities;
-using LawlfyUnitOfWork.Services;
+
 using LawlfyUnitOfWork;
+using LawlfyUnitOfWork.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace LawlfyUnitOfWork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NotificationController : GenericController<Notification, NotificationService>
+    public class NotificationController : GenericController<Notification, NotificationDbContext>
     {
-        public NotificationController(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public NotificationController(IUnitOfWork<NotificationDbContext> unitOfWork) : base(unitOfWork)
         {
         }
     }

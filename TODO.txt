@@ -1,3 +1,7 @@
+#   Saga pattern uygulanacak, saga orchestrator tüm mesajları consume edip gerekli api lere gönderecek.
+#   Caching Mechanism
+#   Api\Gateway for multiple client? Aggregator pattern - BFF ?
+#   UnitOfWorks can be CQRS(CommandQueryResposiblitySegregation)
 #   UI katmanı yazılacak
 #   UI 'dan gelen request'ler middleWare 'da JWT BaseRequest oluşturulacak.
 #   middleWare request'i saga-hero(orchestrator) 'a gönderecek
@@ -5,3 +9,7 @@
 #   RabbitMq Consume sonrası CRUD işlemleri gerçekleştirecek
 
 #   saga-hero içerisine EDA Pattern eklenebilir
+
+#   ORM pattern'i tamamla
+
+#   Uyap Robot with selenium

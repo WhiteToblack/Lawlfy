@@ -1,15 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork.Entities;
-using LawlfyUnitOfWork.Services;
+
 using LawlfyUnitOfWork;
+using LawlfyUnitOfWork.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace LawlfyUnitOfWork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DocumentController : GenericController<Document, DocumentService>
+    public class DocumentController : GenericController<Document, DocumentDbContext>
     {
-        public DocumentController(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public DocumentController(IUnitOfWork<DocumentDbContext> unitOfWork) : base(unitOfWork)
         {
         }
     }

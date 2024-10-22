@@ -1,0 +1,73 @@
+# UserDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context UserDbContext
+
+# AccountingDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context AccountingDbContext
+
+# DocumentDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context DocumentDbContext
+
+# CampaignDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context CampaignDbContext
+
+# OCRDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context OCRDbContext
+
+# NotificationDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context NotificationDbContext
+
+# TaskManagerDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context TaskManagerDbContext
+
+# AuthorizationDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context AuthorizationDbContext
+
+# AuthenticationDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context AuthenticationDbContext
+
+# HealthCheckerDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context HealthCheckerDbContext
+
+# LogDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context LogDbContext
+
+# FirmManagerDbContext için migration oluşturma
+dotnet ef migrations add InitialCreate --context FirmManagerDbContext
+
+
+
+# UserDbContext için veritabanı güncelleme
+dotnet ef database update --context UserDbContext
+
+# AccountingDbContext için veritabanı güncelleme
+dotnet ef database update --context AccountingDbContext
+
+# DocumentDbContext için veritabanı güncelleme
+dotnet ef database update --context DocumentDbContext
+
+# CampaignDbContext için veritabanı güncelleme
+dotnet ef database update --context CampaignDbContext
+
+# OCRDbContext için veritabanı güncelleme
+dotnet ef database update --context OCRDbContext
+
+# NotificationDbContext için veritabanı güncelleme
+dotnet ef database update --context NotificationDbContext
+
+# TaskManagerDbContext için veritabanı güncelleme
+dotnet ef database update --context TaskManagerDbContext
+
+# AuthorizationDbContext için veritabanı güncelleme
+dotnet ef database update --context AuthorizationDbContext
+
+# AuthenticationDbContext için veritabanı güncelleme
+dotnet ef database update --context AuthenticationDbContext
+
+# HealthCheckerDbContext için veritabanı güncelleme
+dotnet ef database update --context HealthCheckerDbContext
+
+# LogDbContext için veritabanı güncelleme
+dotnet ef database update --context LogDbContext
+
+# FirmManagerDbContext için veritabanı güncelleme
+dotnet ef database update --context FirmManagerDbContext

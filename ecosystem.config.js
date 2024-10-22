@@ -31,18 +31,18 @@ module.exports = {
             watch: true
         },
         {
-            name: 'document-manager',
-            script: './services/document-manager/consumer.js',
+            name: 'document-service',
+            script: './services/document-service/consumer.js',
             watch: true
         },
         {
-            name: 'firm-manager',
-            script: './services/firm-manager/consumer.js',
+            name: 'firm-service',
+            script: './services/firm-service/consumer.js',
             watch: true
         },
         {
-            name: 'health-checker',
-            script: './services/health-checker/consumer.js',
+            name: 'dragonfly',
+            script: './services/dragonfly/consumer.js',
             watch: true
         },
         {

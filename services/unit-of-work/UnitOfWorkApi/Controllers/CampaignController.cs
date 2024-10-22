@@ -1,15 +1,17 @@
-using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork.Entities;
-using LawlfyUnitOfWork.Services;
+
+using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork;
+using LawlfyUnitOfWork.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace LawlfyUnitOfWork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CampaignController : GenericController<Campaign, CampaignService>
+    public class CampaignController : GenericController<Campaign, CampaignDbContext>
     {
-        public CampaignController(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public CampaignController(IUnitOfWork<CampaignDbContext> unitOfWork) : base(unitOfWork)
         {
         }
     }

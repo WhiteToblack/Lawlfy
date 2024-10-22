@@ -1,15 +1,17 @@
-using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork.Entities;
-using LawlfyUnitOfWork.Services;
+
+using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork;
+using LawlfyUnitOfWork.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace LawlfyUnitOfWork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : GenericController<User, UserService>
+    public class UserController : GenericController<User, UserDbContext>
     {
-        public UserController(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public UserController(IUnitOfWork<UserDbContext> unitOfWork) : base(unitOfWork)
         {
         }
     }

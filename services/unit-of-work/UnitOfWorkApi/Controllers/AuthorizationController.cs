@@ -1,15 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
 using LawlfyUnitOfWork.Entities;
-using LawlfyUnitOfWork.Services;
-using LawlfyUnitOfWork;
 
+using Microsoft.AspNetCore.Mvc;
+using LawlfyUnitOfWork;
+using LawlfyUnitOfWork.Repositories;
 namespace LawlfyUnitOfWork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthorizationController : GenericController<Authorization, AuthorizationService>
+    public class AuthorizationController : GenericController<Authorization, AuthorizationDbContext>
     {
-        public AuthorizationController(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public AuthorizationController(IUnitOfWork<AuthorizationDbContext> unitOfWork) : base(unitOfWork)
         {
         }
     }
