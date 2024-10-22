@@ -10,3 +10,13 @@ PM2+ activated | Instance Name: LAPTOP-O79T7AV6-2bda | Dash: https://app.pm2.io/
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 npx pm2 start ecosystem.config.js
+
+
+unitOfWork
+dotnet new webapi --use-controllers -o UnitOfWorkApi
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update

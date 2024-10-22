@@ -1,33 +1,33 @@
 const amqp = require('amqplib/callback_api');
+const CrudService = require('./crudService');
 
-const rabbitmqUrl = 'amqp://localhost'; // RabbitMQ bağlantı URL'si
-const queueName = 'lawlfy-user'; // Bu servisin dinleyeceği kuyruk
+// User servisi için generic CRUD servisini initialize ediyoruz
+const userService = new CrudService('user');
 
-amqp.connect(rabbitmqUrl, (err, connection) => {
-  if (err) {
-    throw err;
-  }
+amqp.connect('amqp://localhost', (err, connection) => {
+    if (err) throw err;
 
-  connection.createChannel((err, channel) => {
-    if (err) {
-      throw err;
-    }
+    connection.createChannel((err, channel) => {
+        if (err) throw err;
 
-    channel.assertQueue(queueName, {
-      durable: true // Kuyruğun kalıcı olduğundan emin oluyoruz
+        const queue = 'user_queue';
+
+        channel.assertQueue(queue, { durable: true });
+        console.log(`Waiting for messages in ${queue}`);
+
+        channel.consume(queue, async (msg) => {
+            const user = JSON.parse(msg.content.toString());
+            console.log(`Received message: ${JSON.stringify(user)}`);
+
+            // CRUD işlemi burada yapılır
+            try {
+                const createdUser = await userService.create(user);
+                console.log('User created via RabbitMQ:', createdUser);
+            } catch (error) {
+                console.error('Error creating user via RabbitMQ:', error.message);
+            }
+
+            channel.ack(msg);
+        });
     });
-
-    console.log(`[*] lawlfy-user servisi ${queueName} kuyruğunu dinliyor...`);
-
-    // Mesajları tüketme
-    channel.consume(queueName, (msg) => {
-      if (msg !== null) {
-        const messageContent = msg.content.toString();
-        console.log(`[x] lawlfy-user Mesaj alındı: ${messageContent}`);
-
-        // Mesaj işleme logic'i burada olacak
-        channel.ack(msg); // Mesajın işlendiği bilgisini RabbitMQ'ya gönderiyoruz
-      }
-    });
-  });
 });
